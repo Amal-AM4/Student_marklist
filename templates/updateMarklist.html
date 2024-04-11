@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block titleTab %}Marklist{% endblock titleTab %}
+
+{% block body %}
+
+<h1>Update student marklist {{data}}</h1>
+
+<form action="" method='post'>
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label for="" class="form-label">English : </label>
+      {{form.sub1}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">Malayalam : </label>
+      {{form.sub2}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">CS : </label>
+      {{form.sub3}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">Maths : </label>
+      {{form.sub4}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">Hindi : </label>
+      {{form.sub5}}
+    </div>
+
+
+    <button type="submit">Submit</button>
+
+</form>
+
+{% endblock body %}

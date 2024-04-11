@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block titleTab %}Marklist{% endblock titleTab %}
+
+{% block body %}
+
+<h1>Score of student</h1>
+
+{% comment %} <form action="" method="post">
+
+    {% csrf_token %}
+
+    <label for="">Student Name:</label>
+    <select name="studentname" id="">
+        {% for row in student_data %}
+            <option value="{{ row.id }}">{{ row.name }}</option>
+        {% endfor %}
+    </select>
+    
+    <br> <br>
+    <label for="">English : </label>
+    <input type="number" name="english" id="">
+
+    <br> <br>
+    <label for="">Malayalam : </label>
+    <input type="number" name="mal" id="">
+
+    <br> <br>
+    <label for="">cs : </label>
+    <input type="number" name="cs" id="">
+
+    <br> <br>
+    <label for="">maths : </label>
+    <input type="number" name="maths" id="">
+
+    <br> <br>
+    <label for="">hindi : </label>
+    <input type="number" name="hindi" id="">
+
+    <button type="submit">Submit</button>
+</form> {% endcomment %}
+
+<form action="" method='post'>
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label for="" class="form-label">{{form.student_id.label_tag }}</label>
+      {{form.student_id}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">English : </label>
+      {{form.sub1}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">Malayalam : </label>
+      {{form.sub2}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">CS : </label>
+      {{form.sub3}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">Maths : </label>
+      {{form.sub4}}
+    </div>
+
+    <div class="mb-3">
+      <label for="" class="form-label">Hindi : </label>
+      {{form.sub5}}
+    </div>
+
+
+    <button type="submit">Submit</button>
+
+</form>
+
+{% endblock body %}

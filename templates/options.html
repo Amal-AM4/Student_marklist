@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block titleTab %}Options{% endblock titleTab %}
+
+{% block body %}
+
+<h1>Welcome to option box</h1>
+
+<a href="{% url "insertStudent" %}">Add student</a>
+<a href="{% url "insertMark" %}">Add Mark</a>
+<a href="{% url "displayRecord" %}">Display records</a>
+
+{% endblock body %}
+

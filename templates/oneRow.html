@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block titleTab %}SingleRow{% endblock titleTab %}
+
+{% block body %}
+
+<h1>Details and Marklist</h1>
+
+<ul class="navbar-nav">
+    <li class="nav-item active">
+        {{student_with_mark.student_id.name}}
+    </li>
+    <li class="nav-item active">
+        English: {{student_with_mark.sub1}}
+    </li>
+    <li class="nav-item active">
+        Malayalam: {{student_with_mark.sub2}}
+    </li>
+    <li class="nav-item active">
+        CS: {{student_with_mark.sub3}}
+    </li>
+    <li class="nav-item active">
+        Maths: {{student_with_mark.sub4}}
+    </li>
+    <li class="nav-item active">
+        Hindi: {{student_with_mark.sub5}}
+    </li>
+    <li class="nav-item active">
+        Total: {{total}}
+    </li>
+    <li class="nav-item active">
+        Grade: {{grade}}
+    </li>
+    
+</ul>
+
+<a href="{% url "options" %}">Home</a>
+
+{% endblock body %}
+
+

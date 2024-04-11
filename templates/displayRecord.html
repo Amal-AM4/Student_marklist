@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block titleTab %}DisplayRecord{% endblock titleTab %}
+
+{% block body %}
+
+<h1>Student Details and Marklist</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone No</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Subject 1</th>
+            <th>Subject 2</th>
+            <th>Subject 3</th>
+            <th>Subject 4</th>
+            <th>Subject 5</th>
+            <th>View</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in student_with_mark %}
+            <tr>
+                {% comment %} <td>{{ data.admin_no }}</td> {% endcomment %}
+                <td>{{ data.student_id.name }}</td>
+                <td>{{ data.student_id.phone_no }}</td>
+                <td>{{ data.student_id.email }}</td>
+                <td>{{ data.student_id.address }}</td>
+                <td>{{ data.student_id.gender }}</td>
+                <td>{{ data.student_id.dob }}</td>
+                <td>{{ data.sub1 }}</td>
+                <td>{{ data.sub2 }}</td>
+                <td>{{ data.sub3 }}</td>
+                <td>{{ data.sub4 }}</td>
+                <td>{{ data.sub5 }}</td>
+                <td><a href="{% url "oneRow" %}?uid={{data.student_id.id}}">view</a></td>
+                <td><a href="{% url "delectRow" data.student_id.id %}">remove</a></td>
+                <td><a href="{% url "updateMark" data.student_id.id %}">edit</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock body %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block titleTab %}Insert{% endblock titleTab %}
+
+{% block body %}
+
+    
+
+    <form action="" method="post">
+
+        {% csrf_token %}
+        <h2 class="display-4">Insert Student details</h2>
+
+        <div class="mb-3">
+          <label for="" class="form-label">{{form.name.label_tag}}</label>
+          {{form.name}}
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Phone no</label>
+          {{form.phone_no}}
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Email</label>
+          {{form.email}}
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Address</label>
+          {{form.address}}
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Gender</label>
+          {{form.gender}}
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Date of birth</label>
+          {{form.dob}}
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+        
+    </form>
+
+{% endblock body %}
